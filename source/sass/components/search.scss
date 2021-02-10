@@ -1,0 +1,153 @@
+.search {
+  color: $basic-white;
+
+  background-color: $light-blue;
+  background-image: url("../img/pic-main@1x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/pic-main@2x.png");
+  }
+}
+
+.search h2 {
+  @include reset-text;
+
+  margin-bottom: 16px;
+
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+  }
+}
+
+.search p {
+  @include reset-text;
+
+  margin-top: 12px;
+
+  line-height: 22px;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 8px;
+
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.search__form {
+  display: flex;
+}
+
+.search__form-input {
+  flex-grow: 1;
+  margin-right: 1.875%;
+
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
+
+    &:focus-within {
+      // TODO
+    }
+  }
+}
+
+.search__form-input input {
+  width: 100%;
+  padding: 19px 25px;
+
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $basic-black;
+
+  border: 2px inset rgba(0, 70, 133, 0.2);
+  border-radius: 8px;
+
+  @media (max-width: $mobile-width) {
+    padding: 13px 48px 13px 6.25%;
+    border-radius: 4px;
+  }
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 0.46);
+
+    background-color: $basic-white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search__form button {
+  padding: 14px 32px;
+
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  color: $basic-white;
+
+  background-color: $accent-crimson;
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 48px;
+    margin-left: -48px;
+    padding: 0;
+
+    color: $basic-blue;
+
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: $light-blue;
+      opacity: 1;
+    }
+  }
+}
+
+.search__form span {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.search__form svg {
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+  }
+}

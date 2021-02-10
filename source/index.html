@@ -66,7 +66,30 @@
       </div>
     </nav>
   </header>
-  <main class="page-main"></main>
+  <main class="page-main">
+    <h1 class="visually-hidden">Поиск и оплата платежей</h1>
+    <section class="page-main__search search">
+      <h2>Поиск начислений</h2>
+      <form class="search__form" action="http://example.com" method="GET">
+        <div class="search__form-input">
+          <input type="text" id="search-input" placeholder="Введите данные для поиска">
+        </div>
+        <label class="visually-hidden" for="search-input">Введите данные для поиска</label>
+        <button type="submit" aria-label="Найти">
+          <span>Найти</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g transform="translate(-6 -6)">
+              <rect fill="none" width="24" height="24" transform="translate(6 6)"/>
+              <path fill="currentColor"
+                    d="M-1610.292,30.085l-3.564-3.565q-.054-.054-.1-.111a9.176,9.176,0,0,1-5.245,1.629,9.18,9.18,0,0,1-6.534-2.706,9.18,9.18,0,0,1-2.707-6.535,9.177,9.177,0,0,1,2.707-6.534,9.177,9.177,0,0,1,6.534-2.707,9.183,9.183,0,0,1,6.535,2.706,9.183,9.183,0,0,1,2.706,6.535,9.176,9.176,0,0,1-1.63,5.245q.057.048.111.1l3.564,3.565a1.68,1.68,0,0,1,0,2.376,1.675,1.675,0,0,1-1.188.492A1.675,1.675,0,0,1-1610.292,30.085Zm-13.663-16.04a6.728,6.728,0,0,0,0,9.5,6.728,6.728,0,0,0,9.5,0,6.728,6.728,0,0,0,0-9.5,6.7,6.7,0,0,0-4.753-1.966A6.7,6.7,0,0,0-1623.955,14.045Z"
+                    transform="translate(1636.444 -1.556)"/>
+            </g>
+          </svg>
+        </button>
+      </form>
+      <p>Чем больше параметров введено, тем полнее результаты поиска</p>
+    </section>
+  </main>
   <footer class="page-footer"></footer>
   <script src="js/main.js"></script>
 </body>

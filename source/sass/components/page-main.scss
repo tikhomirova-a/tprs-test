@@ -1,0 +1,16 @@
+.page-main {
+  margin-top: 71px;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 66px;
+  }
+}
+
+.page-main__search {
+  padding: 90px 12.5% 110px;
+  //max-width: 75%; TODO
+
+  @media (max-width: $mobile-width) {
+    padding: 40px 5.55%;
+  }
+}

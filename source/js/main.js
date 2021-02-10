@@ -9,7 +9,7 @@
     body = document.querySelector(`.page-body`);
 
     if (body.querySelector(`.main-nav`)) {
-      nav = body.querySelector(`.main-nav`)
+      nav = body.querySelector(`.main-nav`);
 
       if (nav.querySelector(`.main-nav__button`)) {
         menuToggle = nav.querySelector(`.main-nav__button`);
@@ -28,7 +28,7 @@
       evt.preventDefault();
       hideMenu();
     }
-  }
+  };
 
   // const onOverlayClick = (evt) => {
   //   console.log(evt.target.parentElement);
