@@ -1,0 +1,51 @@
+.menu {
+  padding: 20px 2% 20px 1.56%;
+
+  background-color: rgba(255, 255, 255, 0.95);
+
+  @media (max-width: $mobile-width) {
+    padding-left: 5.55%;
+    padding-right: 3.88%;
+  }
+}
+
+.menu ul {
+  @include reset-list;
+}
+
+.menu__user-nav {
+  margin-bottom: 40px;
+}
+
+.menu li {
+  margin-bottom: 22px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.menu p {
+  margin-bottom: 18px;
+
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.menu a {
+  line-height: 22px;
+  color: $basic-blue;
+
+  &:hover,
+  &:focus {
+    color: $light-blue;
+  }
+}
+
+.menu__site-nav li {
+  &:first-child {
+    @media (max-width: $mobile-width) {
+      margin-bottom: 12px;
+    }
+  }
+}
