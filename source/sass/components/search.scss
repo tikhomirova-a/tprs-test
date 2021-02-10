@@ -11,6 +11,15 @@
   }
 }
 
+.search__wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+
+  @media (max-width: $mobile-width) {
+    max-width: none;
+  }
+}
+
 .search h2 {
   @include reset-text;
 

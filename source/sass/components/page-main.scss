@@ -8,9 +8,29 @@
 
 .page-main__search {
   padding: 90px 12.5% 110px;
-  //max-width: 75%; TODO
 
   @media (max-width: $mobile-width) {
     padding: 40px 5.55%;
+  }
+}
+
+.page-main__payment {
+  padding: 60px 0 0;
+
+  @media (max-width: $mobile-width) {
+    //
+  }
+}
+
+.page-main__partners {
+  width: 75%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 0 60px;
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    max-width: none;
+    padding: 25px 5.55% 0;
   }
 }
