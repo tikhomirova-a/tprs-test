@@ -1,0 +1,34 @@
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 2.7% 40px;
+
+  background-color: rgba(0, 70, 133, 0.2);
+
+  @media (max-width: $mobile-width) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5.55%;
+  }
+}
+
+.page-footer__copyright {
+  @media (max-width: $mobile-width) {
+    margin-bottom: 17px;
+  }
+}
+
+.page-footer__copyright p {
+  @include reset-text;
+
+  font-weight: 600;
+  line-height: 22px;
+
+  @media (max-width: $mobile-width) {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+  }
+}
