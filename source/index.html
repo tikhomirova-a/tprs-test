@@ -42,7 +42,7 @@
           <p>Как это работает</p>
           <ul>
             <li>
-              <a href="#">Условия использования сервиса</a>
+              <a href="#penalty">Условия использования сервиса</a>
             </li>
             <li>
               <a href="#">Способы оплаты</a>
@@ -90,7 +90,7 @@
     <section class="page-main__search search">
       <div class="search__wrapper">
         <h2>Поиск начислений</h2>
-        <form class="search__form" action="http://example.com" method="GET">
+        <form class="search__form" action="https://example.com" method="GET">
           <div class="search__form-input">
             <input type="text" id="search-input" placeholder="Введите данные для поиска">
           </div>
@@ -325,6 +325,35 @@
       </picture>
     </div>
   </footer>
+  <div class="modal-login">
+    <div class="modal-login__content">
+      <h3 class="visually-hidden">Вход в личный кабинет</h3>
+      <p>Введите логин и пароль для входа в Личный кабинет</p>
+      <form class="modal-login__form" action="https://example.com" method="POST">
+        <div class="modal-login__input modal-login__input--login">
+          <label class="visually-hidden" for="login-input">Введите Ваш логин</label>
+          <input type="email" id="login-input" placeholder="Логин" required autocomplete="username">
+        </div>
+        <div class="modal-login__input modal-login__input--password">
+          <label class="visually-hidden" for="password-input">Введите Ваш логин</label>
+          <input type="password" id="password-input" placeholder="Пароль" required autocomplete="current-password">
+        </div>
+        <button type="submit">Войти</button>
+      </form>
+      <a href="#">Напомнить пароль</a>
+      <a href="#">Регистрация</a>
+      <button type="button" aria-label="Закрыть модальное окно">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <g transform="translate(-6 -6)">
+            <rect width="24" height="24" fill="none" transform="translate(6 6)"/>
+            <path fill="currentColor"
+                  d="M-778.527,850.174l-9.241,9.241-1.732-1.733,9.241-9.241-9.187-9.187,1.732-1.733,9.188,9.188,9.241-9.241,1.732,1.733-9.241,9.241,9.294,9.294-1.732,1.733Z"
+                  transform="translate(796.5 -830.467)"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>

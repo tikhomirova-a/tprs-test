@@ -103,10 +103,10 @@
 }
 
 .search__form button {
+  @include reset-button;
+
   padding: 14px 32px;
 
-  font-family: "Open Sans", "Arial", sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 24px;
   line-height: 33px;
@@ -114,17 +114,15 @@
   color: $basic-white;
 
   background-color: $accent-crimson;
-  border: none;
   border-radius: 8px;
-
-  cursor: pointer;
 
   &:hover,
   &:focus {
-    opacity: 0.7;
+    background-color: #e1133f;
   }
 
   &:active {
+    background-color: #e1133f;
     opacity: 0.5;
   }
 

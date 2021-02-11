@@ -78,7 +78,10 @@
 }
 
 .payment__nav a {
+  text-decoration: none;
   color: $basic-blue;
+
+  border-bottom: 1px dotted $light-blue;
 
   &:hover,
   &:focus {
@@ -87,7 +90,7 @@
 
   &:active {
     color: $light-blue;
-    opacity: 0.7;
+    opacity: 0.5;
   }
 }
 

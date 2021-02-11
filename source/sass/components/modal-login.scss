@@ -1,0 +1,167 @@
+.modal-login {
+  display: none;
+
+  &--show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    @media (max-width: $mobile-width) {
+      background-color: $basic-white;
+    }
+  }
+}
+
+.modal-login__content {
+  position: relative;
+
+  width: 400px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: $basic-white;
+
+  @media (max-width: $mobile-width) {
+    position: static;
+
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 100vh;
+    padding: 24px 5.55%;
+  }
+}
+
+.modal-login__content p {
+  padding-right: 50px;
+  margin-bottom: 30px;
+
+  font-weight: 700;
+
+  @media (max-width: $mobile-width) {
+    padding-right: 15.6%;
+  }
+}
+
+.modal-login__content > button {
+  @include reset-button;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 48px;
+  height: 48px;
+
+  color: rgba(0, 0, 0, 0.25);
+
+  &:hover,
+  &:focus {
+    color: $light-blue;
+  }
+
+  &:active {
+    color: $light-blue;
+    opacity: 0.5;
+  }
+}
+
+.modal-login__form {
+  margin-bottom: 30px;
+}
+
+.modal-login__input {
+  &--login {
+    margin-bottom: 16px;
+  }
+
+  &--password {
+    margin-bottom: 23px;
+  }
+}
+
+.modal-login__input input {
+  width: 100%;
+  padding: 19px 24px;
+
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $basic-black;
+
+  border-radius: 8px;
+  border: 2px inset rgba(0, 70, 133, 0.2);
+
+  &::placeholder {
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.46);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modal-login__form button {
+  @include reset-button;
+
+  display: inline-block;
+  width: 100%;
+  padding: 14px 32px;
+
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+  color: $basic-white;
+
+  border-radius: 8px;
+
+  background-color: $accent-crimson;
+
+  &:hover,
+  &:focus {
+    background-color: #e1133f;
+  }
+
+  &:active {
+    background-color: #e1133f;
+    opacity: 0.5;
+  }
+}
+
+.modal-login__content a {
+  display: inline-block;
+  margin-right: auto;
+
+  text-decoration: none;
+  color: $basic-blue;
+
+  border-bottom: 1px dotted $light-blue;
+
+  &:hover,
+  &:focus {
+    color: $light-blue;
+  }
+
+  &:active {
+    color: $light-blue;
+    opacity: 0.5;
+  }
+
+  &:first-of-type {
+    margin-bottom: 15px;
+  }
+}
