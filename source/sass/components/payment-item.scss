@@ -5,13 +5,21 @@
   margin: 0 auto;
 
   @media (max-width: $mobile-width) {
+    width: 100%;
     max-width: none;
+    padding: 0 5.55% 0 4.44%;
+    display: block;
   }
 }
 
 .payment-item__info {
   flex: 0 1 62.5%;
   margin-right: 4.16%;
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .payment-item__info h3 {
@@ -22,13 +30,97 @@
   font-weight: 600;
   font-size: 25px;
   line-height: 32px;
+
+  @media (max-width: $mobile-width) {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 6px 10px 6px 0;
+
+    font-size: 16px;
+    line-height: 24px;
+    vertical-align: middle;
+    color: $basic-blue;
+
+    &:hover,
+    &:focus {
+      color: $light-blue;
+    }
+
+    &:active {
+      color: $light-blue;
+      opacity: 0.7;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 50%;
+
+      width: 10px;
+      height: 10px;
+      content: "";
+
+      border: 5px solid transparent;
+      border-top-color: inherit;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      border-top-color: inherit;
+    }
+
+    .payment-item--open &::after {
+      transform: translateY(-50%);
+
+      border-top-color: transparent;
+      border-bottom-color: inherit;
+    }
+
+    .payment-item--open &:hover::after,
+    .payment-item--open &:focus::after {
+      border-bottom-color: inherit;
+    }
+  }
 }
 
-.payment-item__info p {
+.payment-item__info h3 span {
+  @media (max-width: $mobile-width) {
+    margin-left: 6%;
+
+    border-bottom: 1px dotted $light-blue;
+  }
+}
+
+.payment-item__info svg {
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    display: inline;
+  }
+}
+
+.payment-item__info-text {
+  @media (max-width: $mobile-width) {
+    height: 0;
+    visibility: hidden;
+
+    .payment-item--open & {
+      height: auto;
+      visibility: visible;
+      padding: 12px 0 20px 5px;
+    }
+  }
+}
+
+.payment-item__info-text p {
   @include reset-text;
 }
 
-.payment-item__info > p:first-of-type {
+.payment-item__info-text > p:first-of-type {
   margin-bottom: 15px;
 }
 
@@ -60,6 +152,10 @@
 
 .payment-item__img-wrapper {
   flex: 0 1 33.3%;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .payment-item__img-wrapper img {

@@ -10,6 +10,7 @@
   text-align: center;
 
   @media (max-width: $mobile-width) {
+    max-width: none;
     margin-bottom: 27px;
 
     font-size: 20px;
@@ -32,7 +33,13 @@
   align-items: center;
 
   @media (max-width: $mobile-width) {
-    margin-bottom: 32px;
+    width: 46.25%;
+    margin: 0 7.5% 32px 0;
+
+    &:nth-child(2n+2),
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
