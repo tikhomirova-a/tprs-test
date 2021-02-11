@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 2.7% 40px;
+  padding: 33px 2.7% 30px 2.5%;
 
   background-color: rgba(0, 70, 133, 0.2);
 
@@ -10,13 +10,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 5.55%;
+    padding: 15px 5.55% 10px;
   }
 }
 
 .page-footer__copyright {
   @media (max-width: $mobile-width) {
-    margin-bottom: 17px;
+    margin-bottom: 15px;
   }
 }
 
@@ -27,6 +27,8 @@
   line-height: 22px;
 
   @media (max-width: $mobile-width) {
+    display: inline-block;
+
     font-size: 12px;
     line-height: 16px;
     text-align: center;

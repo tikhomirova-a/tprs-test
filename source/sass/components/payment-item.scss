@@ -7,7 +7,7 @@
   @media (max-width: $mobile-width) {
     width: 100%;
     max-width: none;
-    padding: 0 5.55% 0 4.44%;
+    padding: 0 5% 0 4%;
     display: block;
   }
 }
@@ -19,6 +19,17 @@
   @media (max-width: $mobile-width) {
     width: 100%;
     margin: 0;
+  }
+
+  .payment__list li:nth-child(2n+2) & {
+    order: 1;
+    margin-right: 0;
+    margin-left: 4.16%;
+
+    @media (max-width: $mobile-width) {
+      order: 0;
+      margin: 0;
+    }
   }
 }
 
@@ -38,7 +49,7 @@
     align-items: center;
     width: 100%;
     margin: 0;
-    padding: 6px 10px 6px 0;
+    padding: 6px 10px 5px 0;
 
     font-size: 16px;
     line-height: 24px;
@@ -111,7 +122,7 @@
     .payment-item--open & {
       height: auto;
       visibility: visible;
-      padding: 12px 0 20px 5px;
+      padding: 12px 0 18px 5px;
     }
   }
 }
@@ -121,11 +132,15 @@
 }
 
 .payment-item__info-text > p:first-of-type {
-  margin-bottom: 15px;
+  margin-bottom: 13px;
 }
 
 .payment-item__feature {
-  margin-top: 37px;
+  margin-top: 35px;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 22px;
+  }
 }
 
 .payment-item__feature span {

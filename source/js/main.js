@@ -24,14 +24,15 @@
   let menuToggle;
   let menu;
 
-  if (window.util.nav.querySelector(`.main-nav__button`)) {
-    menuToggle = window.util.nav.querySelector(`.main-nav__button`);
-  }
+  if (window.util.nav) {
+    if (window.util.nav.querySelector(`.main-nav__button`)) {
+      menuToggle = window.util.nav.querySelector(`.main-nav__button`);
+    }
 
-  if (window.util.nav.querySelector(`.menu`)) {
-    menu = window.util.nav.querySelector(`.menu`);
+    if (window.util.nav.querySelector(`.menu`)) {
+      menu = window.util.nav.querySelector(`.menu`);
+    }
   }
-
 
   const hideMenu = () => {
     window.util.nav.classList.remove(`main-nav--open`);
@@ -82,12 +83,72 @@
     toggleMenu();
   };
 
-  menuToggle.addEventListener(`click`, onMenuTogglePress);
+  if (menuToggle) {
+    menuToggle.addEventListener(`click`, onMenuTogglePress);
+  }
 
   window.menu = {
     onMenuEscape,
     onMenuOverlayClick
   };
+})();
+
+(function () {
+  let supportBlock;
+  let supportLink;
+  let supportDropdown;
+
+  if (window.util.body.querySelector(`.main-nav__support`)) {
+    supportBlock = window.util.body.querySelector(`.main-nav__support`);
+  }
+
+  if (window.util.body.querySelector(`.main-nav__support > a`)) {
+    supportLink = window.util.body.querySelector(`.main-nav__support > a`);
+  }
+
+  const showDropdown = () => {
+    supportBlock.classList.add(`main-nav__support--open`);
+    supportDropdown = supportBlock.querySelector(`.main-nav__dropdown`);
+    supportBlock.addEventListener(`click`, onSupportClick);
+    supportDropdown.addEventListener(`click`, onSupportClick);
+    window.util.body.addEventListener(`click`, onSupportOverlayClick);
+  };
+
+  const hideDropdown = () => {
+    supportBlock.classList.remove(`main-nav__support--open`);
+    supportBlock.removeEventListener(`click`, onSupportClick);
+    supportDropdown.removeEventListener(`click`, onSupportClick);
+    window.util.body.removeEventListener(`click`, onSupportOverlayClick);
+  };
+
+  const toggleSupportDropdown = () => {
+    if (supportBlock.classList.contains(`main-nav__support--open`)) {
+      hideDropdown();
+    } else {
+      showDropdown();
+    }
+  };
+
+  const onSupportLinkClick = (evt) => {
+    evt.preventDefault();
+    toggleSupportDropdown();
+  };
+
+  const onSupportClick = (evt) => {
+    if (evt.target.tagName !== `A` && evt.target.parentElement.className !== `main-nav__support-link`) {
+      evt.stopPropagation();
+    }
+  };
+
+  const onSupportOverlayClick = (evt) => {
+    if (evt.target !== supportDropdown) {
+      hideDropdown();
+    }
+  };
+
+  if (supportLink) {
+    supportLink.addEventListener(`click`, onSupportLinkClick);
+  }
 })();
 
 (function () {
@@ -122,20 +183,23 @@
   let loginModal;
   let buttonClose;
 
-  if (window.util.nav.querySelector(`.menu__user-nav a`)) {
-    loginLink = window.util.nav.querySelector(`.menu__user-nav a`);
-  }
+  if (window.util.nav) {
+    if (window.util.nav.querySelector(`.menu__user-nav a`)) {
+      loginLink = window.util.nav.querySelector(`.menu__user-nav a`);
+    }
 
-  if (window.util.body.querySelector(`.modal-login`)) {
-    loginModal = window.util.body.querySelector(`.modal-login`);
+    if (window.util.body.querySelector(`.modal-login`)) {
+      loginModal = window.util.body.querySelector(`.modal-login`);
 
-    if (loginModal.querySelector(`.modal-login__content > button`)) {
-      buttonClose = loginModal.querySelector(`.modal-login__content > button`);
+      if (loginModal.querySelector(`.modal-login__content > button`)) {
+        buttonClose = loginModal.querySelector(`.modal-login__content > button`);
+      }
     }
   }
 
   const hideModal = () => {
     loginModal.classList.remove(`modal-login--show`);
+    window.util.body.classList.remove(`page-body--no-scroll`);
     buttonClose.removeEventListener(`click`, onButtonCloseClick);
     window.util.body.removeEventListener(`keydown`, onModalEsc);
     loginModal.removeEventListener(`click`, onModalOverlayClick);
@@ -162,6 +226,7 @@
 
   const showModal = () => {
     loginModal.classList.add(`modal-login--show`);
+    window.util.body.classList.add(`page-body--no-scroll`);
     buttonClose.addEventListener(`click`, onButtonCloseClick);
     window.util.body.removeEventListener(`keydown`, window.menu.onMenuEscape);
     window.util.body.addEventListener(`keydown`, onModalEsc);

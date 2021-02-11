@@ -5,25 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.min.css">
   <title>ThisSiteTitle|Главная страница</title>
-  <!-- Pixel Glass -->
-  <style>
-    HTML {
-      background-repeat: no-repeat;
-      background-position:  50% 0;
-      /* Mobile layout by default */
-      background-image: url( "mockup/mobile.png" );
-    }
-    /* Desktop */
-    @media ( min-width: 800px ) {
-      HTML {
-        /* Desktop layout */
-        background-image: url( "mockup/desktop.png" );
-      }
-    }
-  </style>
-  <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
-  <script src="../node_modules/pixel-glass/script.js"></script>
-  <!-- // Pixel Glass -->
 </head>
 <body class="page-body">
   <header class="page-header">
@@ -57,9 +38,9 @@
         </div>
       </div>
       <a class="main-nav__logo" aria-label="Вы находитесь на главной странице «ThisSiteTitle»">
-        <img src="img/logo-custom.svg" width="298" height="45" alt="ThisSiteTitle.">
+        <img src="img/logo.svg" width="293" height="44" alt="ThisSiteTitle.">
       </a>
-      <div class="main-nav__support main-nav__support--">
+      <div class="main-nav__support">
         <a href="#" aria-label="Обратиться в поддержку.">
           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
             <g transform="translate(-2 -2)">
@@ -92,7 +73,7 @@
         <h2>Поиск начислений</h2>
         <form class="search__form" action="https://example.com" method="GET">
           <div class="search__form-input">
-            <input type="text" id="search-input" placeholder="Введите данные для поиска">
+            <input type="text" id="search-input" name="search-input" placeholder="Введите данные для поиска">
           </div>
           <label class="visually-hidden" for="search-input">Введите данные для поиска</label>
           <button type="submit" aria-label="Найти">
@@ -129,10 +110,10 @@
               <a href="#taxes">Налоги</a>
             </li>
             <li>
-              <a href="#rosreestr">Услуги Росреестра</a>
+              <a href="#rosreestr">&nbsp;Услуги Росреестра</a>
             </li>
             <li>
-              и другие услуги
+              &nbsp;и другие услуги
             </li>
           </ul>
         </div>
@@ -140,7 +121,7 @@
       <div class="payment__list">
         <ul>
           <li>
-            <article id="penalty" class="payment-item payment-item--open">
+            <article id="penalty" class="payment-item">
               <div class="payment-item__info">
                 <h3>
                   <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
@@ -158,7 +139,7 @@
                   <div class="payment-item__feature">
                     <p>
                       <span>Платить вовремя — дешевле!</span> В первые 20 дней после выдачи постановления штраф можно
-                      оплатить со скидкой 50%. Для своевременной оплаты штрафов настройте уведомления в Личном кабинете.
+                      оплатить со скидкой 50%. &nbsp;Для своевременной оплаты штрафов настройте уведомления в Личном кабинете.
                     </p>
                   </div>
                 </div>
@@ -308,7 +289,7 @@
           <div class="partners__img-wrapper">
             <img src="img/logo_partner6.svg" width="114" height="100" alt="Компания 6.">
           </div>
-          <h3>Партнер 6 с длинным названием</h3>
+          <h3>Партнер 6<br> с длинным названием</h3>
         </li>
       </ul>
     </section>
@@ -332,11 +313,11 @@
       <form class="modal-login__form" action="https://example.com" method="POST">
         <div class="modal-login__input modal-login__input--login">
           <label class="visually-hidden" for="login-input">Введите Ваш логин</label>
-          <input type="email" id="login-input" placeholder="Логин" required autocomplete="username">
+          <input type="email" id="login-input" name="login-input" placeholder="Логин" required autocomplete="username">
         </div>
         <div class="modal-login__input modal-login__input--password">
           <label class="visually-hidden" for="password-input">Введите Ваш логин</label>
-          <input type="password" id="password-input" placeholder="Пароль" required autocomplete="current-password">
+          <input type="password" id="password-input" name="password-input" placeholder="Пароль" required autocomplete="current-password">
         </div>
         <button type="submit">Войти</button>
       </form>

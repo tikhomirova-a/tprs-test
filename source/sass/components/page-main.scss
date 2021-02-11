@@ -1,8 +1,8 @@
 .page-main {
-  margin-top: 71px;
+  margin-top: 68px;
 
   @media (max-width: $mobile-width) {
-    margin-top: 66px;
+    margin-top: 48px;
   }
 }
 
@@ -18,7 +18,7 @@
   padding: 60px 0 0;
 
   @media (max-width: $mobile-width) {
-    padding: 28px 0 25px;
+    padding: 28px 0 0;
   }
 }
 
@@ -31,6 +31,6 @@
   @media (max-width: $mobile-width) {
     width: 100%;
     max-width: none;
-    padding: 25px 5.55% 0;
+    padding: 27px 5.55% 0;
   }
 }

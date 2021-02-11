@@ -14,6 +14,10 @@
   border: none;
 
   @media (max-width: $mobile-width) {
+    position: absolute;
+    top: 0;
+    right: 2.22%;
+
     order: 1;
   }
 
@@ -29,22 +33,40 @@
 
     background-color: $basic-blue;
     transition: transform 0.3s ease-out;
+
+    @media (max-width: $mobile-width) {
+      width: 23px;
+    }
   }
 
   &::before {
     top: 13px;
 
     box-shadow: 0 10px 0 $basic-blue;
+
+    @media (max-width: $mobile-width) {
+      top: 16px;
+
+      box-shadow: 0 7px 0 $basic-blue;
+    }
   }
 
   &::after {
     bottom: 12px;
+
+    @media (max-width: $mobile-width) {
+      bottom: 15px;
+    }
   }
 
   &:hover::before,
   &:focus::before {
     background-color: $light-blue;
     box-shadow: 0 10px 0 $light-blue;
+
+    @media (max-width: $mobile-width) {
+      box-shadow: 0 7px 0 $light-blue;
+    }
   }
 
   &:hover::after,
@@ -58,8 +80,6 @@
     left: 50%;
 
     width: 38px;
-
-    transition: transform 0.3s ease-out;
 
     @media (max-width: $mobile-width) {
       width: 28px;
@@ -104,6 +124,16 @@
 }
 
 .main-nav__logo {
+  padding-right: 35px;
+
+  @media (max-width: $mobile-width) {
+    padding-right: 0;
+  }
+}
+
+.main-nav__logo img {
+  display: block;
+
   @media (max-width: $mobile-width) {
     width: 206px;
     height: 30px;
@@ -111,12 +141,16 @@
 }
 
 .main-nav__support {
+  display: inline-flex;
+
   @media (max-width: $mobile-width) {
     display: none;
   }
 }
 
 .main-nav__support > a {
+  display: inline-flex;
+
   color: $basic-blue;
 
   &:hover {
