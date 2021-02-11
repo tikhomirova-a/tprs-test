@@ -54,4 +54,35 @@
   };
 
   menuToggle.addEventListener(`click`, onMenuTogglePress);
+
+  window.menu = {
+    body
+  };
+})();
+
+(function () {
+  let paymentItems;
+
+  if (window.menu.body.querySelectorAll(`.payment-item`)) {
+    paymentItems = window.menu.body.querySelectorAll(`.payment-item`);
+  }
+
+  const closeAllItems = () => {
+    paymentItems.forEach((item) => {
+      item.classList.remove(`payment-item--open`);
+    });
+  };
+
+  const onPaymentHeaderClick = (element) => {
+    if (element.classList.contains(`payment-item--open`)) {
+      element.classList.remove(`payment-item--open`);
+    } else {
+      closeAllItems();
+      element.classList.add(`payment-item--open`);
+    }
+  };
+
+  for (let paymentItem of paymentItems) {
+    paymentItem.querySelector(`h3`).addEventListener(`click`, onPaymentHeaderClick.bind(undefined, paymentItem));
+  }
 })();

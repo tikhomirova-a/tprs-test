@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.min.css">
   <title>ThisSiteTitle|Главная страница</title>
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* Mobile layout by default */
+      background-image: url( "mockup/mobile.png" );
+    }
+    /* Desktop */
+    @media ( min-width: 800px ) {
+      HTML {
+        /* Desktop layout */
+        background-image: url( "mockup/desktop.png" );
+      }
+    }
+  </style>
+  <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
 </head>
 <body class="page-body">
   <header class="page-header">
@@ -153,7 +172,7 @@
             </article>
           </li>
           <li>
-            <article id="debt" class="payment-item">
+            <article id="debts" class="payment-item">
               <div class="payment-item__info">
                 <h3>
                   <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
@@ -217,7 +236,7 @@
             </article>
           </li>
           <li>
-            <article class="payment-item">
+            <article id="rosreestr" class="payment-item">
               <div class="payment-item__info">
                 <h3>
                   <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
